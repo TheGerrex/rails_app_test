@@ -1,0 +1,41 @@
+<% if user_signed_in? %>
+  <div class="d-flex justify-content-between align-items-center pb-4">
+    <h1>Friends List</h1>
+    <%= link_to "+ New friend", new_friend_path, class: 'btn btn-primary h-100'%>
+  </div>
+
+
+  <div class="friends-list">
+    <table class="table table-hover table-striped table-borderless center">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Twitter</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @friends.each do |friend| %>
+          <% if friend.user == current_user %>
+            <%= link_to(friend) do %>
+            <tr>
+              <td><%= link_to friend.first_name + ' ' + friend.last_name, friend %></td>
+              <td><%=friend.email%></td>
+              <td><%=friend.phone%></td>
+              <td><%=friend.twitter%></td>
+              <td><%= button_to 'X', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'%></td>
+            </tr>
+            <% end %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <h1>My first test in ruby on rails</h1>
+  <p>Just don't tell my mom</p>
+<% end %>
+
+

@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+
+td {
+    vertical-align: middle;
+}
+
+.friends-list {
+    /* background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 100%;
+    height: 100%;
+    padding: 25px; */
+}
+
+#friend-form, #new_user {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; */
+    
+}
+
+#friend-form, #new_user div {
+    width: 100%;
+    margin-bottom: 10px;
+}
+ 
+
+.field {
+    margin-bottom: 15px;
+}
+
+.field label {
+    font-weight: bold;
+}
+.field input{
+    width: 100%;
+}
+
+#new_user input[type="checkbox"] {
+    width: auto;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 450px;
+}

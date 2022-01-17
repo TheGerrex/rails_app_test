@@ -1,0 +1,49 @@
+<div class="form-container">
+  <%= form_with(model: friend, id: "friend-form") do |form| %>
+    <% if friend.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+        <ul>
+          <% friend.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :first_name, style: "display: block", class: "form-label" %>
+      <%= form.text_field :first_name,  placeholder: "Gerardo" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :last_name, style: "display: block", class: "form-label" %>
+      <%= form.text_field :last_name,  placeholder: "Smith" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :email, style: "display: block", class: "form-label" %>
+      <%= form.text_field :email,  placeholder: "example@mail.com" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :phone, style: "display: block", class: "form-label" %>
+      <%= form.text_field :phone, placeholder: "81-15-55-57-83"%>
+    </div>
+
+    <div class="field">
+      <%= form.label :twitter, style: "display: block", class: "form-label" %>
+      <%= form.text_field :twitter,  placeholder: "@twitter_username" %>
+    </div>
+
+    <div class="field d-none">
+      <%= form.label :user_id, id: :friend_user_id, type: :hidden,  style: "display: block", class: "form-label" %>
+      <%= form.number_field :user_id,  value: current_user.id %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit :class => "btn btn-primary w-auto me-auto"%>
+    </div>
+  <% end %>
+</div>
