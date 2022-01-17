@@ -1,17 +1,18 @@
-# README
+# Friend List App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello my name is Gerardo Garcia, I am a front-end developer and this is a test app very simple made in ruby on rails
 
 Things you may want to cover:
 
 * Ruby version
+3.0.3
 
 * System dependencies
 
 * Configuration
 
 * Database creation
+Postgres SQL
 
 * Database initialization
 
